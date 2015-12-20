@@ -1,0 +1,19 @@
+app_identifier "io.x8.flsetup" # The bundle identifier of your app
+apple_id "krodak.konta@gmail.com" # Your Apple email address
+
+#https://github.com/fastlane/fastlane/issues/18
+#https://github.com/fastlane/produce/issues/65
+apple_dev_portal_id  "krodak.konta@gmail.com"
+itunes_connect_id   "krodak@x8.io"
+
+# You can uncomment any of the lines below and add your own
+# team selection in case you're in multiple teams
+team_name "X8 Ltd"
+team_id "EM7GT8VV65"
+
+# To select a team for iTunes Connect use
+#itc_team_name "X8 Ltd"
+#itc_team_id "EM7GT8VV65"
+
+# you can even provide different app identifiers, Apple IDs and team names per lane:
+# https://github.com/KrauseFx/fastlane/blob/master/docs/Appfile.md
