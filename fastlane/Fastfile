@@ -59,6 +59,10 @@ platform :ios do
     sigh(force: true, output_path: certPath)
   end
 
+  lane :screenshot do
+    snapshot(scheme: 'flsetup', reinstall_app: true, app_identifier: appId)
+  end
+
   error do |lane, exception|
 
   end

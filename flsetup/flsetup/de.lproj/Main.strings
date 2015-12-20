@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "Navigate to VC 4"; ObjectID = "0zA-Jg-yi6"; */
+"0zA-Jg-yi6.normalTitle" = "Navigate to VC 4";
+
+/* Class = "UILabel"; text = "View Controller 3"; ObjectID = "7nQ-v9-YQO"; */
+"7nQ-v9-YQO.text" = "View Controller 3";
+
+/* Class = "UIButton"; normalTitle = "Navigate to VC 2"; ObjectID = "Hc4-i0-Hzy"; */
+"Hc4-i0-Hzy.normalTitle" = "Navigate to VC 2";
+
+/* Class = "UILabel"; text = "View Controller 4"; ObjectID = "Wh8-ql-C0e"; */
+"Wh8-ql-C0e.text" = "View Controller 4";
+
+/* Class = "UILabel"; text = "View Controller 2"; ObjectID = "bIq-hM-iL1"; */
+"bIq-hM-iL1.text" = "View Controller 2";
+
+/* Class = "UILabel"; text = "Start View Controller"; ObjectID = "jco-Zr-i4F"; */
+"jco-Zr-i4F.text" = "Start View Controller";
+
+/* Class = "UIButton"; normalTitle = "Navigate to VC 3"; ObjectID = "jy6-0g-fUc"; */
+"jy6-0g-fUc.normalTitle" = "Navigate to VC 3";
+
+/* Class = "UIButton"; normalTitle = "Navigate to VC 1"; ObjectID = "n0A-kf-qwS"; */
+"n0A-kf-qwS.normalTitle" = "Navigate to VC 1";
+
+/* Class = "UILabel"; text = "View Controller 1"; ObjectID = "qzl-XO-HGg"; */
+"qzl-XO-HGg.text" = "View Controller 1";

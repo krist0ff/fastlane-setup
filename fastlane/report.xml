@@ -3,47 +3,17 @@
   <testsuite name="run">
     
       
-      <testcase name="0: Verifying required fastlane version" time="0.000252">
+      <testcase name="0: Verifying required fastlane version" time="0.000308">
         
       </testcase>
     
       
-      <testcase name="1: default_platform" time="0.000139">
+      <testcase name="1: default_platform" time="0.000174">
         
       </testcase>
     
       
-      <testcase name="2: produce" time="10.645855">
-        
-      </testcase>
-    
-      
-      <testcase name="3: produce" time="10.783733">
-        
-      </testcase>
-    
-      
-      <testcase name="4: cert" time="15.285778">
-        
-      </testcase>
-    
-      
-      <testcase name="5: cert" time="49.05108">
-        
-      </testcase>
-    
-      
-      <testcase name="6: sigh" time="14.762463">
-        
-      </testcase>
-    
-      
-      <testcase name="7: sigh" time="14.879775">
-        
-      </testcase>
-    
-      
-      <testcase name="8: sigh" time="22.510705">
+      <testcase name="2: snapshot" time="142.130283">
         
       </testcase>
     

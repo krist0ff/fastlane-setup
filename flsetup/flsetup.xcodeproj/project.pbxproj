@@ -12,7 +12,19 @@
 		856D83D01C23E7170006E442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856D83CE1C23E7170006E442 /* Main.storyboard */; };
 		856D83D21C23E7170006E442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 856D83D11C23E7170006E442 /* Assets.xcassets */; };
 		856D83D51C23E7170006E442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856D83D31C23E7170006E442 /* LaunchScreen.storyboard */; };
+		85AC10BF1C26F39B009BB0FF /* flsetupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC10BE1C26F39B009BB0FF /* flsetupUITests.swift */; };
+		85AC10C71C26FE83009BB0FF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC10C61C26FE83009BB0FF /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85AC10C11C26F39B009BB0FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 856D83BF1C23E7170006E442 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 856D83C61C23E7170006E442;
+			remoteInfo = flsetup;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		856D83C71C23E7170006E442 /* flsetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flsetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +34,23 @@
 		856D83D11C23E7170006E442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		856D83D41C23E7170006E442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		856D83D61C23E7170006E442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85AC10BC1C26F39B009BB0FF /* flsetupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flsetupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85AC10BE1C26F39B009BB0FF /* flsetupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flsetupUITests.swift; sourceTree = "<group>"; };
+		85AC10C01C26F39B009BB0FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85AC10C61C26FE83009BB0FF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		85D6953F1C2691DB00E77B6C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		85D695401C2691DB00E77B6C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		856D83C41C23E7170006E442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85AC10B91C26F39B009BB0FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				856D83C91C23E7170006E442 /* flsetup */,
+				85AC10BD1C26F39B009BB0FF /* flsetupUITests */,
 				856D83C81C23E7170006E442 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				856D83C71C23E7170006E442 /* flsetup.app */,
+				85AC10BC1C26F39B009BB0FF /* flsetupUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +89,16 @@
 				856D83D61C23E7170006E442 /* Info.plist */,
 			);
 			path = flsetup;
+			sourceTree = "<group>";
+		};
+		85AC10BD1C26F39B009BB0FF /* flsetupUITests */ = {
+			isa = PBXGroup;
+			children = (
+				85AC10C61C26FE83009BB0FF /* SnapshotHelper.swift */,
+				85AC10BE1C26F39B009BB0FF /* flsetupUITests.swift */,
+				85AC10C01C26F39B009BB0FF /* Info.plist */,
+			);
+			path = flsetupUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +121,24 @@
 			productReference = 856D83C71C23E7170006E442 /* flsetup.app */;
 			productType = "com.apple.product-type.application";
 		};
+		85AC10BB1C26F39B009BB0FF /* flsetupUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85AC10C31C26F39B009BB0FF /* Build configuration list for PBXNativeTarget "flsetupUITests" */;
+			buildPhases = (
+				85AC10B81C26F39B009BB0FF /* Sources */,
+				85AC10B91C26F39B009BB0FF /* Frameworks */,
+				85AC10BA1C26F39B009BB0FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85AC10C21C26F39B009BB0FF /* PBXTargetDependency */,
+			);
+			name = flsetupUITests;
+			productName = flsetupUITests;
+			productReference = 85AC10BC1C26F39B009BB0FF /* flsetupUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +151,10 @@
 				TargetAttributes = {
 					856D83C61C23E7170006E442 = {
 						CreatedOnToolsVersion = 7.2;
+					};
+					85AC10BB1C26F39B009BB0FF = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 856D83C61C23E7170006E442;
 					};
 				};
 			};
@@ -113,6 +172,7 @@
 			projectRoot = "";
 			targets = (
 				856D83C61C23E7170006E442 /* flsetup */,
+				85AC10BB1C26F39B009BB0FF /* flsetupUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +188,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85AC10BA1C26F39B009BB0FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,13 +207,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85AC10B81C26F39B009BB0FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85AC10BF1C26F39B009BB0FF /* flsetupUITests.swift in Sources */,
+				85AC10C71C26FE83009BB0FF /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85AC10C21C26F39B009BB0FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 856D83C61C23E7170006E442 /* flsetup */;
+			targetProxy = 85AC10C11C26F39B009BB0FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		856D83CE1C23E7170006E442 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				856D83CF1C23E7170006E442 /* Base */,
+				85D6953F1C2691DB00E77B6C /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -155,6 +240,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				856D83D41C23E7170006E442 /* Base */,
+				85D695401C2691DB00E77B6C /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -250,6 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = flsetup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.x8.flsetup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,9 +348,34 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = flsetup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.x8.flsetup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		85AC10C41C26F39B009BB0FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = flsetupUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.x8.flsetupUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = flsetup;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		85AC10C51C26F39B009BB0FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = flsetupUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.x8.flsetupUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = flsetup;
+				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -284,6 +396,15 @@
 			buildConfigurations = (
 				856D83DA1C23E7170006E442 /* Debug */,
 				856D83DB1C23E7170006E442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85AC10C31C26F39B009BB0FF /* Build configuration list for PBXNativeTarget "flsetupUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85AC10C41C26F39B009BB0FF /* Debug */,
+				85AC10C51C26F39B009BB0FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
