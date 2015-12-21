@@ -1,0 +1,18 @@
+# For more information about this configuration visit
+# https://github.com/fastlane/gym#gymfile
+
+# In general, you can use the options available
+# gym --help
+
+# Remove the # in front of the line to enable the option
+
+# sdk "iphoneos9.0"
+
+
+scheme            "flsetup"
+clean             true
+
+output_directory  "./build"
+output_name       "FLSetup"
+workspace         "./flsetup/flsetup.xcworkspace"
+project           "./flsetup/flsetup.xcodeproj"

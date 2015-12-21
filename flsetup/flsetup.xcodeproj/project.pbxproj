@@ -38,8 +38,6 @@
 		85AC10BE1C26F39B009BB0FF /* flsetupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flsetupUITests.swift; sourceTree = "<group>"; };
 		85AC10C01C26F39B009BB0FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85AC10C61C26FE83009BB0FF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		85D6953F1C2691DB00E77B6C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		85D695401C2691DB00E77B6C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +229,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				856D83CF1C23E7170006E442 /* Base */,
-				85D6953F1C2691DB00E77B6C /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -240,7 +237,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				856D83D41C23E7170006E442 /* Base */,
-				85D695401C2691DB00E77B6C /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -407,6 +403,7 @@
 				85AC10C51C26F39B009BB0FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

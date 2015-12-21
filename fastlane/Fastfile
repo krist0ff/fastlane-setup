@@ -28,6 +28,9 @@ teamName    = 'X8 Ltd'
 sku         = '123abc'
 appVersion  = '0.1'
 
+scheme      = 'flsetup'
+project     = './flsetup/flsetup.xcodeproj'
+
 platform :ios do
 
   desc "Creating an app, code signing certificate and provisioning profiles"
@@ -59,8 +62,41 @@ platform :ios do
     sigh(force: true, output_path: certPath)
   end
 
+  desc "Making screenshots for supported devices"
+
   lane :screenshot do
     snapshot(scheme: 'flsetup', reinstall_app: true, app_identifier: appId)
+  end
+
+  desc "Build .ipa"
+
+  lane :build do
+    gym(
+      project:          project,
+      scheme:           scheme,
+      output_directory: './build',
+      output_name:      'FLSetup'
+      )
+  end
+
+  lane :deliver do
+    snapshot(
+      scheme:             'flsetup',
+      reinstall_app:      true,
+      app_identifier:     appId,
+      skip_open_summary:  true
+    )
+
+    deliver(
+      screenshots_path: './screenshots'
+    )
+  end
+
+  lane :test do
+    scan(
+      project:  project,
+      scheme:   scheme
+    )
   end
 
   error do |lane, exception|

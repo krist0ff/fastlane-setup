@@ -1,0 +1,1 @@
+copyright "#{Time.now.year} X8 Ltd."

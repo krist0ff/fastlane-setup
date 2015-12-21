@@ -1,0 +1,27 @@
+###################### More Options ######################
+# If you want to have even more control, check out the documentation
+# https://github.com/KrauseFx/deliver/blob/master/Deliverfile.md
+
+
+###################### Automatically generated ######################
+# Feel free to remove the following line if you use fastlane (which you should)
+
+app_identifier "io.x8.flsetup" # The bundle identifier of your app
+username "krodak@x8.io" # your Apple ID user
+submit_for_review false
+
+app_review_information(
+  first_name: "Krzysztof",
+  last_name: "Rodak",
+  phone_number: "+48 123123123",
+  email_address: "krodak@x8.io",
+  demo_user: "user",
+  demo_password: "password",
+  notes: "such notes, very text"
+)
+automatic_release false
+
+languages([
+  "en-US",
+  "de-DE",
+])
