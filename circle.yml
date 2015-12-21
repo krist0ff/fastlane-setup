@@ -1,0 +1,20 @@
+machine:
+  xcode:
+    version: "7.0"
+  environment:
+    HOCKEYAPP_TOKEN: "619122f93b1f4acc8fe2e836a5afb8c7"
+    KEY_PASSWORD: "clipsta"
+test:
+  override:
+    - bundle exec rake unit | tee unit_result
+    - cat unit_result | grep "0 failed, 0 errored"
+    - sudo rm -rf /Library/Developer/CoreSimulator/
+    - bundle exec rake cucumber | tee cucumber_result
+    - cat cucumber_result | grep -v "failed"
+deployment:
+  hockey:
+    branch: development
+    commands:
+      - rake release | tee release_output
+      - cat release_output | grep -v "The following build commands failed"
+      - cat release_output | tail -1000

@@ -20,8 +20,3 @@ app_review_information(
   notes: "such notes, very text"
 )
 automatic_release false
-
-languages([
-  "en-US",
-  "de-DE",
-])

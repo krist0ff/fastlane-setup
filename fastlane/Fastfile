@@ -32,10 +32,19 @@ scheme      = 'flsetup'
 project     = './flsetup/flsetup.xcodeproj'
 
 platform :ios do
+  before_all do
+
+    ENV["HIPCHAT_API_TOKEN"] = "2f98d475881a351b26d8d1f0cdb59e"
+    ENV["HIPCHAT_API_VERSION"] = "1"
+
+    # increment_build_number
+
+    # xctool # run the tests of your app
+  end
 
   desc "Creating an app, code signing certificate and provisioning profiles"
 
-  lane :setup_provision do
+  lane :initApp do
     produce(
     app_identifier: appId,
     app_name:       appName,
@@ -62,49 +71,109 @@ platform :ios do
     sigh(force: true, output_path: certPath)
   end
 
-  desc "Making screenshots for supported devices"
-
-  lane :screenshot do
-    snapshot(scheme: 'flsetup', reinstall_app: true, app_identifier: appId)
-  end
-
-  desc "Build .ipa"
-
-  lane :build do
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    scan(
+      project:  project,
+      scheme:   scheme
+    )
+    sigh
     gym(
       project:          project,
       scheme:           scheme,
       output_directory: './build',
       output_name:      'FLSetup'
       )
+      # pilot
   end
 
-  lane :deliver do
-    snapshot(
-      scheme:             'flsetup',
-      reinstall_app:      true,
-      app_identifier:     appId,
-      skip_open_summary:  true
+    desc "Deploy a new version to the App Store"
+    lane :deploy do
+      snapshot(
+        scheme:             'flsetup',
+        reinstall_app:      true,
+        app_identifier:     appId,
+        skip_open_summary:  true
+      )
+      sigh
+      gym(
+        project:          project,
+        scheme:           scheme,
+        output_directory: './build',
+        output_name:      'FLSetup'
+        )
+      deliver(
+        force: true,
+        screenshots_path: './screenshots',
+        ipa: './build'
+      )
+    end
+
+## This section is for test lanes that won't be used during normal process
+
+desc "Test and create .ipa"
+lane :build do
+  scan(
+    project:  project,
+    scheme:   scheme
+  )
+  sigh
+  gym(
+    project:          project,
+    scheme:           scheme,
+    output_directory: './build',
+    output_name:      'FLSetup'
     )
 
-    deliver(
-      screenshots_path: './screenshots'
+    hipchat(
+      message: "App successfully tested and build locally",
+      channel: "fastlane-test",
+      success: true
+    )
+end
+
+
+desc "Deliver app"
+lane :deliver do
+  deliver(
+    force: true,
+    screenshots_path: './screenshots',
+    ipa: './build/FLSetup.ipa'
+  )
+end
+
+  desc "Making screenshots for supported devices"
+
+  lane :screenshot do
+    snapshot(scheme: 'flsetup', reinstall_app: true, app_identifier: appId)
+  end
+
+#https://github.com/fastlane/pilot/issues/85
+  desc "Add new tester and sent application to TestFlight testers"
+  lane :pilot do
+    pilot(
+      ipa: './build/FLSetup.ipa'
     )
   end
 
+  desc "Run tests"
   lane :test do
     scan(
       project:  project,
       scheme:   scheme
     )
+
+    hipchat(
+      message: "Test passed",
+      channel: "fastlane",
+      success: true
+    )
   end
+
+
 
   error do |lane, exception|
 
   end
 end
-
-
-
-# More information about multiple platforms in fastlane: https://github.com/KrauseFx/fastlane/blob/master/docs/Platforms.md
-# All available actions: https://github.com/KrauseFx/fastlane/blob/master/docs/Actions.md

@@ -1,1 +1,1 @@
-copyright "#{Time.now.year} X8 Ltd."
+copyright 2015 X8 Ltd.
