@@ -42,7 +42,7 @@ platform :ios do
     # xctool # run the tests of your app
   end
 
-  desc "Creating an app, code signing certificate and provisioning profiles"
+  desc "Creating an app, code signing certificate and provisioning profiles, PN certs"
 
   lane :initApp do
     produce(
@@ -55,7 +55,6 @@ platform :ios do
     skip_itc:       true
     )
     produce(
-    username:       'krodak@x8.io',
     app_identifier: appId,
     app_name:       appName,
     language:       language,
@@ -64,11 +63,13 @@ platform :ios do
     team_name:      teamName,
     skip_devcenter: true
     )
-    cert(output_path: certPath)
     cert(development: true, output_path: certPath)
     sigh(development: true, output_path: certPath)
+    pem(development: true, output_path: certPath)
+    cert(output_path: certPath)
     sigh(adhoc: true, output_path: certPath)
     sigh(force: true, output_path: certPath)
+    pem(output_path: certPath)
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
@@ -85,19 +86,27 @@ platform :ios do
       output_directory: './build',
       output_name:      'FLSetup'
       )
-      # pilot
-  end
+      pilot(
+        ipa: './build/FLSetup.ipa'
+      )
+    end
 
-    desc "Deploy a new version to the App Store"
-    lane :deploy do
+    desc "Deploy version to the App Store along with all metadata and screenshots"
+    lane :full_deploy do
       snapshot(
         scheme:             'flsetup',
         reinstall_app:      true,
         app_identifier:     appId,
         skip_open_summary:  true
       )
+      scan(
+        project:  project,
+        scheme:   scheme
+      )
       sigh
       gym(
+        clean: true,
+        silent: true,
         project:          project,
         scheme:           scheme,
         output_directory: './build',
@@ -109,6 +118,25 @@ platform :ios do
         ipa: './build'
       )
     end
+
+    desc "Deploy a new version to the App Store without updating metadata or screenshots"
+    lane :deploy do
+      sigh
+      gym(
+        clean: true,
+        silent: true,
+        scheme: "greatkiddo",
+        output_directory: './build',
+        output_name:      'FLSetup'
+      )
+      deliver(
+        force: true,
+        skip_metadata: true,
+        skip_screenshots: true,
+        ipa: './build/FLSetup.ipa'
+      )
+    end
+
 
 ## This section is for test lanes that won't be used during normal process
 
