@@ -34,12 +34,7 @@ project     = './flsetup/flsetup.xcodeproj'
 platform :ios do
   before_all do
 
-    ENV["HIPCHAT_API_TOKEN"] = "2f98d475881a351b26d8d1f0cdb59e"
-    ENV["HIPCHAT_API_VERSION"] = "1"
-
-    # increment_build_number
-
-    # xctool # run the tests of your app
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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" # Webhook URL created in Slack
   end
 
   desc "Creating an app, code signing certificate and provisioning profiles, PN certs"
@@ -89,6 +84,10 @@ platform :ios do
       pilot(
         ipa: './build/FLSetup.ipa'
       )
+          slack(
+            message: "Fastlane-setup successfully deployed to TestFlight",
+            success: true
+          )
     end
 
     desc "Deploy version to the App Store along with all metadata and screenshots"
@@ -135,6 +134,10 @@ platform :ios do
         skip_screenshots: true,
         ipa: './build/FLSetup.ipa'
       )
+      slack(
+        message: "Fastlane-setup successfully deployed to iTunesConnect for AppStore",
+        success: true
+      )
     end
 
 
@@ -153,10 +156,8 @@ lane :build do
     output_directory: './build',
     output_name:      'FLSetup'
     )
-
-    hipchat(
-      message: "App successfully tested and build locally",
-      channel: "fastlane-test",
+    slack(
+      message: "Fastlane-setup successfully built and tested",
       success: true
     )
 end
@@ -177,7 +178,7 @@ end
     snapshot(scheme: 'flsetup', reinstall_app: true, app_identifier: appId)
   end
 
-#https://github.com/fastlane/pilot/issues/85
+  #https://github.com/fastlane/pilot/issues/85
   desc "Add new tester and sent application to TestFlight testers"
   lane :pilot do
     pilot(
@@ -191,17 +192,12 @@ end
       project:  project,
       scheme:   scheme
     )
-
-    hipchat(
-      message: "Test passed",
-      channel: "fastlane",
-      success: true
-    )
   end
 
-
-
   error do |lane, exception|
-
+    slack(
+      message: exception.message,
+      success: false
+    )
   end
 end

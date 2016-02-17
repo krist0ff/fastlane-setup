@@ -345,7 +345,7 @@ We just need to keep in mind that not everytime we post to AppStore we want to u
       gym(
         clean: true,
         silent: true,
-        scheme: "greatkiddo",
+        scheme: "flsetup",
         output_directory: './build',
         output_name:      'FLSetup'
       )

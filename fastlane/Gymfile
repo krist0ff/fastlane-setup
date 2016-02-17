@@ -14,5 +14,4 @@ clean             true
 
 output_directory  "./build"
 output_name       "FLSetup"
-workspace         "./flsetup/flsetup.xcworkspace"
 project           "./flsetup/flsetup.xcodeproj"

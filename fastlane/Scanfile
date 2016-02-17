@@ -7,6 +7,6 @@
 # Remove the # in front of the line to enable the option
 
 scheme        "flsetup"
-open_report   true
+open_report   false
 clean         true
 project       "./flsetup/flsetup.xcodeproj"

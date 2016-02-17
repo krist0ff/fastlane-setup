@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<testsuites tests='1' failures='0'>
-  <testsuite name='flsetupUITests.flsetupUITests' tests='1' failures='0'>
-    <testcase classname='flsetupUITests.flsetupUITests' name='testExample' time='15.301'/>
-  </testsuite>
-</testsuites>
